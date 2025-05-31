@@ -1,6 +1,23 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { FaReact, FaCss3Alt, FaPhp, FaHtml5, FaJs } from "react-icons/fa";
+import { SiTailwindcss, SiVercel, SiSupabase, SiDart, SiFlutter, SiFirebase, SiMysql } from "react-icons/si";
+
+const techIcons: { [key: string]: React.ReactElement } = {
+  React: <FaReact className="text-blue-500" />,
+  "Tailwind CSS": <SiTailwindcss className="text-teal-400" />,
+  Vercel: <SiVercel className="text-black" />,
+  JavaScript: <FaJs className="text-yellow-400" />,
+  Supabase: <SiSupabase className="text-green-600" />,
+  Dart: <SiDart className="text-blue-400" />,
+  FLutter: <SiFlutter className="text-blue-500" />,
+  Firebase: <SiFirebase className="text-yellow-500" />,
+  PHP: <FaPhp className="text-indigo-700" />,
+  HTML: <FaHtml5 className="text-orange-500" />,
+  CSS: <FaCss3Alt className="text-blue-600" />,
+  MySQL: <SiMysql className="text-blue-700" />,
+};
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<number | null>(null);
@@ -111,8 +128,9 @@ export default function Projects() {
                   {project.tech.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-gray-400 rounded-full text-xs font-medium text-gray-800 hover:shadow-md transition-shadow"
+                      className="flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1 bg-white border border-gray-400 rounded-full text-xs font-medium text-gray-800 hover:shadow-md transition-shadow"
                     >
+                      {techIcons[tech] || null}
                       {tech}
                     </span>
                   ))}

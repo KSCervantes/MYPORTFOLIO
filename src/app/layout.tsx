@@ -40,7 +40,7 @@ export default function RootLayout({
         {/* Optional extra tags for manifest or fallback */}
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} pb-24`}>
         {children}
       </body>
     </html>

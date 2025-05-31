@@ -1,5 +1,8 @@
 "use client";
 import React from 'react';
+import type { ReactNode } from 'react';
+import { FaReact, FaLaravel, FaPhp, FaHtml5, FaCss3Alt, FaBootstrap, FaGit, FaGithub, FaPython, FaJava } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiFirebase, SiSupabase, SiJavascript, SiMysql, SiFlutter, SiDart, SiCplusplus, SiStrapi } from "react-icons/si";
 
 export default function WorkExperience() {
   const experiences = [
@@ -11,12 +14,12 @@ export default function WorkExperience() {
       type: "Freelance",
       description: "Built and deployed modern websites for small businesses and startups, focusing on responsive design and optimal user experience.",
       achievements: [
-        "Developed 15+ responsive websites using React, Next.js, and Tailwind CSS",
+        "Developed 5+ responsive websites using React, Next.js, Laravel, and Tailwind CSS",
         "Integrated Firebase and Supabase for backend services and real-time data",
         "Improved client website performance by 40% through optimization techniques",
         "Maintained 100% client satisfaction rate with on-time project delivery"
       ],
-      technologies: ["React", "Next.js", "Tailwind CSS", "Firebase", "JavaScript", "HTML"]
+      technologies: ["React", "Next.js", "Tailwind CSS", "Firebase", "JavaScript", "HTML", "Laravel"]
     },
     {
       title: "Mobile App Developer",
@@ -26,10 +29,9 @@ export default function WorkExperience() {
       type: "Freelance",
       description: "Specialized in cross-platform mobile app development using Flutter, creating intuitive and performant mobile solutions.",
       achievements: [
-        "Built 8+ cross-platform mobile applications using Flutter",
+        "Built 4+ cross-platform mobile applications using Flutter",
         "Implemented complex UI/UX designs with smooth animations",
         "Integrated RESTful APIs and real-time database connections",
-        "Delivered apps with 4.5+ star ratings on app stores"
       ],
       technologies: ["Flutter", "Dart", "Firebase", "Supabase", "REST APIs"]
     },
@@ -46,9 +48,33 @@ export default function WorkExperience() {
         "Optimized database queries resulting in 60% faster load times",
         "Mentored junior developers and conducted code reviews"
       ],
-      technologies: ["React", "Node.js", "MySQL", "PHP", "JavaScript"]
+      technologies: ["React", "Next JS", "Laravel", "MySQL", "PHP", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Bootstrap", "Git", "GitHub", "Supabase", "Firebase", "REST APIs", "Python", "C++", "Java"]
     }
   ];
+
+  const techIcons: Record<string, ReactNode> = {
+    "React": <FaReact />,
+    "Next.js": <SiNextdotjs />,
+    "Next JS": <SiNextdotjs />,
+    "Laravel": <FaLaravel />,
+    "MySQL": <SiMysql />,
+    "PHP": <FaPhp />,
+    "JavaScript": <SiJavascript />,
+    "HTML": <FaHtml5 />,
+    "CSS": <FaCss3Alt />,
+    "Tailwind CSS": <SiTailwindcss />,
+    "Bootstrap": <FaBootstrap />,
+    "Git": <FaGit />,
+    "GitHub": <FaGithub />,
+    "Supabase": <SiSupabase />,
+    "Firebase": <SiFirebase />,
+    "REST APIs": <SiStrapi />, // Using SiStrapi as a placeholder for REST APIs
+    "Python": <FaPython />,
+    "C++": <SiCplusplus />,
+    "Java": <FaJava />,
+    "Flutter": <SiFlutter />,
+    "Dart": <SiDart />,
+  };
 
   const getTypeColor = () => {
     // All types use black background and white text for a monochrome look
@@ -124,8 +150,9 @@ export default function WorkExperience() {
                       {exp.technologies.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="bg-black text-white px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
+                          className="bg-black text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors"
                         >
+                          {techIcons[tech] || null}
                           {tech}
                         </span>
                       ))}

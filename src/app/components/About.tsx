@@ -1,6 +1,8 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import { FaPython, FaReact, FaHtml5, FaPhp, FaJava, FaGitAlt, FaGithub, FaBootstrap } from "react-icons/fa";
+import { SiNextdotjs, SiJavascript, SiFlutter, SiTailwindcss, SiMysql, SiFirebase, SiSupabase, SiLaravel, SiCplusplus, SiCss3, SiPostman } from "react-icons/si";
 
 export default function About() {
   const information = {
@@ -21,17 +23,25 @@ export default function About() {
   ];
 
   const technicalSkills = [
-    { name: "Python", color: "bg-black" },
-    { name: "React", color: "bg-black" },
-    { name: "Next.js", color: "bg-black" },
-    { name: "JavaScript", color: "bg-black" },
-    { name: "HTML", color: "bg-black" },
-    { name: "PHP", color: "bg-black" },
-    { name: "Flutter", color: "bg-black" },
-    { name: "Tailwind CSS", color: "bg-black" },
-    { name: "MySQL", color: "bg-black" },
-    { name: "Firebase", color: "bg-black" },
-    { name: "Supabase", color: "bg-black" }
+    { name: "Python", color: "bg-black", icon: <FaPython /> },
+    { name: "React", color: "bg-black", icon: <FaReact /> },
+    { name: "Next.js", color: "bg-black", icon: <SiNextdotjs /> },
+    { name: "JavaScript", color: "bg-black", icon: <SiJavascript /> },
+    { name: "HTML", color: "bg-black", icon: <FaHtml5 /> },
+    { name: "CSS", color: "bg-black", icon: <SiCss3 /> },
+    { name: "Bootstrap", color: "bg-black", icon: <FaBootstrap /> },
+    { name: "Tailwind CSS", color: "bg-black", icon: <SiTailwindcss /> },
+    { name: "PHP", color: "bg-black", icon: <FaPhp /> },
+    { name: "Laravel", color: "bg-black", icon: <SiLaravel /> },
+    { name: "Java", color: "bg-black", icon: <FaJava /> },
+    { name: "C++", color: "bg-black", icon: <SiCplusplus /> },
+    { name: "Flutter", color: "bg-black", icon: <SiFlutter /> },
+    { name: "MySQL", color: "bg-black", icon: <SiMysql /> },
+    { name: "Firebase", color: "bg-black", icon: <SiFirebase /> },
+    { name: "Supabase", color: "bg-black", icon: <SiSupabase /> },
+    { name: "REST API", color: "bg-black", icon: <SiPostman /> },
+    { name: "Git", color: "bg-black", icon: <FaGitAlt /> },
+    { name: "GitHub", color: "bg-black", icon: <FaGithub /> }
   ];
 
   return (
@@ -125,8 +135,9 @@ export default function About() {
               {technicalSkills.map((skill, index) => (
                 <span
                   key={index}
-                  className={`${skill.color} text-white px-4 py-2 rounded-full text-xs font-medium hover:opacity-80 transition-opacity`}
+                  className={`${skill.color} text-white px-4 py-2 rounded-full text-xs font-medium flex items-center gap-2 hover:opacity-80 transition-opacity`}
                 >
+                  <span className="text-lg">{skill.icon}</span>
                   {skill.name}
                 </span>
               ))}
