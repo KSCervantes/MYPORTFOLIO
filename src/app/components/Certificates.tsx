@@ -8,7 +8,7 @@ export default function Certificates() {
   return (
     <section id="certificates" className="py-10 px-2 sm:py-16 sm:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 sm:mb-12 text-center">
+        <h2 className="text-xs font-bold mb-8 sm:mb-12 text-center">
           <span className="inline-block border-2 border-black px-4 py-2 sm:px-6 sm:py-2 rounded-lg bg-black text-white">
             Achievements
           </span>

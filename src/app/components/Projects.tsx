@@ -43,14 +43,14 @@ export default function Projects() {
       id: 2,
       title: "Community Bulletin App",
       shortDescription: "Real-time community engagement platform",
-      fullDescription: "A full-stack community bulletin application leveraging Supabase for backend services, featuring real-time updates, user authentication, and collaborative posting capabilities. Perfect for neighborhood communities and organizations.",
+      fullDescription: "A full-stack community bulletin application leveraging Supabase for backend services, featuring real-time updates, user without, and collaborative posting capabilities. Perfect for neighborhood communities and organizations.",
       tech: ["Supabase", "Dart", "FLutter", "Firebase"],
       icon: "📢",
       gradient: "",
       bgColor: "bg-white",
       borderColor: "border-gray-300",
       status: "Development",
-      features: ["Real-time Updates", "User Profiles", "Comment System", "Mobile Responsive"],
+      features: ["Real-time Updates", "Darkmode Features", "Realtime Notifications", "Mobile Responsive"],
       link: "https://drive.google.com/file/d/1OYuRqjbYosS77LGPX_n5vXXeMyNB_pRR/view",
       linkLabel: "Download APK",
       image: "/images/BULLETIN.png",
@@ -76,7 +76,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-10 px-2 sm:py-16 sm:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 sm:mb-8 text-center">
+        <h2 className="text-xs font-bold mb-6 sm:mb-8 text-center">
           <span className="inline-block border-2 border-black px-3 py-2 sm:px-6 sm:py-2 rounded-lg bg-black text-white">
             Featured Projects
           </span>

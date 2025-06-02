@@ -156,16 +156,13 @@ export default function Hero() {
         <div className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl mx-auto text-left">
           {/* Text content */}
           <div className="space-y-6 sm:space-y-10 mt-8 sm:mt-16 mb-8 sm:mb-16">
-            <p className="text-1xl sm:text-lg md:text-xl text-gray-500 mb-2 sm:mb-4 text-left">Hi Good Day, I&#39;m</p>
+            <p className="text-1xl sm:text-lg md:text-xl text-gray-500 mb-2 sm:mb-4 text-left">Hi, I am</p>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-2 sm:mb-4 text-black leading-tight text-left">
-              Kyle Cervantes
+              Kyle S. Cervantes
             </h1>
             <h2 className="text-base sm:text-2xl md:text-3xl font-semibold text-gray-700 mb-4 sm:mb-6 text-left">
               Software Developer
             </h2>
-            <p className="text-2x1 sm:text-lg md:text-xl text-gray-600 max-w-xs sm:max-w-2xl mb-8 sm:mb-12 leading-relaxed px-1 sm:px-2 text-left">
-              I&#39;m a student who is interested in web and mobile development. I&#39;m also a person who is interested in learning new things.
-            </p>
 
             {/* Infinite scrolling skills with logos */}
             <div className="mb-6 sm:mb-12 w-full overflow-x-hidden overflow-y-hidden">
