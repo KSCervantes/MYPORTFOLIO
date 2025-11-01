@@ -1,8 +1,8 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import { FaPython, FaReact, FaHtml5, FaPhp, FaJava, FaGitAlt, FaGithub, FaBootstrap } from "react-icons/fa";
-import { SiNextdotjs, SiJavascript, SiFlutter, SiTailwindcss, SiMysql, SiFirebase, SiSupabase, SiLaravel, SiCplusplus, SiCss3, SiPostman } from "react-icons/si";
+import { FaPython, FaReact, FaHtml5, FaPhp, FaGitAlt, FaGithub, FaBootstrap } from "react-icons/fa";
+import { SiNextdotjs, SiJavascript, SiFlutter, SiTailwindcss, SiMysql, SiFirebase, SiSupabase, SiLaravel, SiCss3, SiPostman } from "react-icons/si";
 
 export default function About() {
   const information = {
@@ -15,12 +15,7 @@ export default function About() {
     languages: ["Filipino", "English"]
   };
 
-  const softSkills = [
-    { name: "Leadership", percentage: 50, color: "bg-black" },
-    { name: "Teamwork", percentage: 75, color: "bg-black" },
-    { name: "Communication", percentage: 75, color: "bg-black" },
-    { name: "Problem Solving", percentage: 85, color: "bg-black" }
-  ];
+  // (soft skills removed - not currently rendered)
 
   const technicalSkills = [
     { name: "Python", color: "bg-black", icon: <FaPython /> },
@@ -33,8 +28,6 @@ export default function About() {
     { name: "Tailwind CSS", color: "bg-black", icon: <SiTailwindcss /> },
     { name: "PHP", color: "bg-black", icon: <FaPhp /> },
     { name: "Laravel", color: "bg-black", icon: <SiLaravel /> },
-    { name: "Java", color: "bg-black", icon: <FaJava /> },
-    { name: "C++", color: "bg-black", icon: <SiCplusplus /> },
     { name: "Flutter", color: "bg-black", icon: <SiFlutter /> },
     { name: "MySQL", color: "bg-black", icon: <SiMysql /> },
     { name: "Firebase", color: "bg-black", icon: <SiFirebase /> },
@@ -45,7 +38,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-10 px-4 sm:py-16 sm:px-8 bg-gray-50">
+    <section id="about" className="py-10 px-4 sm:py-16 sm:px-8 bg-gray-50 dark:bg-[#0a192f]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-xs font-bold mb-8 sm:mb-12 text-center">
           <span className="inline-block border-2 border-black px-4 py-2 sm:px-6 sm:py-2 rounded-lg bg-black text-white">
@@ -57,7 +50,7 @@ export default function About() {
           {/* Profile Image */}
           <div className="flex items-center justify-center">
             <Image
-              src="/images/KAyeL.png"
+              src="/images/profile/profile2-bg.png"
               alt="Kyle Cervantes"
               width={500}
               height={500}
@@ -83,47 +76,6 @@ export default function About() {
                 </div>
               </div>
             </div>
-
-            {/* Soft Skills */}
-            <div className="bg-white rounded-lg p-4 sm:p-6">
-              <h3 className="text-xl font-bold text-black mb-4">SOFT SKILLS:</h3>
-              <div className="grid grid-cols-4 gap-3 sm:gap-4">
-                {softSkills.map((skill, index) => (
-                  <div key={index} className="text-center">
-                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-2">
-                      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                        <circle
-                          cx="50"
-                          cy="50"
-                          r="40"
-                          stroke="currentColor"
-                          strokeWidth="6"
-                          fill="transparent"
-                          className="text-gray-200"
-                        />
-                        <circle
-                          cx="50"
-                          cy="50"
-                          r="40"
-                          stroke="currentColor"
-                          strokeWidth="6"
-                          fill="transparent"
-                          strokeDasharray={`${2 * Math.PI * 40}`}
-                          strokeDashoffset={`${2 * Math.PI * 40 * (1 - skill.percentage / 100)}`}
-                          className={skill.color.replace('bg-', 'text-')}
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-xs font-bold text-gray-800">{skill.percentage}%</span>
-                      </div>
-                    </div>
-                    <h4 className="font-medium text-gray-800 text-xs sm:text-sm">{skill.name}</h4>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Technical Skills */}
             <div className="bg-white rounded-lg p-4 sm:p-6">
               <h3 className="text-xl font-bold text-black mb-4">TECHNICAL EXPERTISE:</h3>

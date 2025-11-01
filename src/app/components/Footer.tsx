@@ -1,9 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Github, Linkedin, Facebook, Instagram, ArrowUp, FileText } from "lucide-react";
+import { Github, Linkedin, Facebook, Instagram, ArrowUp, FileText, Sun, Moon } from "lucide-react";
+import { useTheme } from './ThemeProvider';
 
 export default function Footer() {
   const [atTop, setAtTop] = useState(true);
+  // Use our theme context
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +26,7 @@ export default function Footer() {
       style={{ pointerEvents: "none" }}
     >
       <div
-        className="backdrop-blur-md bg-white/70 border border-gray-200 shadow-2xl rounded-xl px-3 py-2 flex flex-col md:flex-row items-center justify-between gap-2 mb-2"
+        className="backdrop-blur-md bg-white/70 border border-gray-200 shadow-2xl rounded-xl px-3 py-2 flex flex-col md:flex-row items-center justify-between gap-2 mb-2 footer-blur"
         style={{ pointerEvents: "auto" }}
       >
         {/* Social Icons + Up Arrow */}
@@ -90,6 +93,18 @@ export default function Footer() {
               Resume
             </span>
           </a>
+          {/* Theme toggle (beside Resume) */}
+          <button
+            onClick={toggleTheme}
+            className="group relative p-1 rounded-full text-gray-600 hover:bg-gray-900 hover:text-white transition-colors theme-toggle"
+            aria-label="Toggle theme"
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+            <span className="absolute left-1/2 -translate-x-1/2 -top-6 opacity-0 group-hover:opacity-100 pointer-events-none bg-black text-white text-[10px] rounded px-1.5 py-0.5 transition-opacity whitespace-nowrap z-10">
+              {theme === 'dark' ? 'Light' : 'Dark'}
+            </span>
+          </button>
           {/* Up Arrow - responsive margin and padding */}
           <a
             href="#top"
@@ -104,7 +119,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes fade-in {
           from { opacity: 0; transform: translateY(40px);}
           to { opacity: 1; transform: translateY(0);}
@@ -112,7 +127,7 @@ export default function Footer() {
         .animate-fade-in {
           animation: fade-in 0.7s cubic-bezier(.4,0,.2,1);
         }
-      `}</style>
+      `}} />
     </footer>
   );
 }
