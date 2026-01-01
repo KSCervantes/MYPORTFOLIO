@@ -22,6 +22,105 @@ body {
 	color: var(--text);
 }
 
+/* Hexagonal Honeycomb Background Pattern */
+.grid-background {
+	background: radial-gradient(
+			circle farthest-side at 0% 50%,
+			#e8e8e8 23.5%,
+			rgba(255, 170, 0, 0) 0
+		)
+		21px 30px,
+	radial-gradient(
+			circle farthest-side at 0% 50%,
+			#f0f0f0 24%,
+			rgba(240, 166, 17, 0) 0
+		)
+		19px 30px,
+	linear-gradient(
+			#e8e8e8 14%,
+			rgba(240, 166, 17, 0) 0,
+			rgba(240, 166, 17, 0) 85%,
+			#e8e8e8 0
+		)
+		0 0,
+	linear-gradient(
+			150deg,
+			#e8e8e8 24%,
+			#f0f0f0 0,
+			#f0f0f0 26%,
+			rgba(240, 166, 17, 0) 0,
+			rgba(240, 166, 17, 0) 74%,
+			#f0f0f0 0,
+			#f0f0f0 76%,
+			#e8e8e8 0
+		)
+		0 0,
+	linear-gradient(
+			30deg,
+			#e8e8e8 24%,
+			#f0f0f0 0,
+			#f0f0f0 26%,
+			rgba(240, 166, 17, 0) 0,
+			rgba(240, 166, 17, 0) 74%,
+			#f0f0f0 0,
+			#f0f0f0 76%,
+			#e8e8e8 0
+		)
+		0 0,
+	linear-gradient(90deg, #f0f0f0 2%, #e8e8e8 0, #e8e8e8 98%, #f0f0f0 0%) 0 0
+		#e8e8e8;
+	background-size: 40px 60px;
+}
+
+.dark .grid-background {
+	background: radial-gradient(
+			circle farthest-side at 0% 50%,
+			#1a1a1a 23.5%,
+			rgba(255, 170, 0, 0) 0
+		)
+		21px 30px,
+	radial-gradient(
+			circle farthest-side at 0% 50%,
+			#252525 24%,
+			rgba(240, 166, 17, 0) 0
+		)
+		19px 30px,
+	linear-gradient(
+			#1a1a1a 14%,
+			rgba(240, 166, 17, 0) 0,
+			rgba(240, 166, 17, 0) 85%,
+			#1a1a1a 0
+		)
+		0 0,
+	linear-gradient(
+			150deg,
+			#1a1a1a 24%,
+			#252525 0,
+			#252525 26%,
+			rgba(240, 166, 17, 0) 0,
+			rgba(240, 166, 17, 0) 74%,
+			#252525 0,
+			#252525 76%,
+			#1a1a1a 0
+		)
+		0 0,
+	linear-gradient(
+			30deg,
+			#1a1a1a 24%,
+			#252525 0,
+			#252525 26%,
+			rgba(240, 166, 17, 0) 0,
+			rgba(240, 166, 17, 0) 74%,
+			#252525 0,
+			#252525 76%,
+			#1a1a1a 0
+		)
+		0 0,
+	linear-gradient(90deg, #252525 2%, #1a1a1a 0, #1a1a1a 98%, #252525 0%) 0 0
+		#1a1a1a;
+	background-size: 40px 60px;
+}
+
 /* Footer backdrop in dark mode: use a darker translucent background and lighter border */
 .footer-blur {
 	/* default fallback to match the existing utility bg-white/70 and border-gray-200 */
@@ -60,3 +159,157 @@ body {
 	box-shadow: 0 8px 30px rgba(2,6,23,0.65) !important;
 }
 /* removed hover utility override that caused parsing errors */
+
+/* Playful 3D Button Styles */
+.button-3d {
+	position: relative;
+	padding: 0;
+	border: none;
+	transform: rotate(-2deg);
+	transform-origin: center;
+	font-size: 12px;
+	cursor: pointer;
+	padding-bottom: 2px;
+	border-radius: 5px;
+	transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	background-color: #4a5568; /* gray-700 for light mode */
+	box-shadow: 0 2px 0 #2d3748;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.button-3d-large {
+	font-size: 16px;
+	padding-bottom: 3px;
+	border-radius: 8px;
+	box-shadow: 0 3px 0 #2d3748;
+}
+
+.dark .button-3d-large {
+	box-shadow: 0 3px 0 #374151;
+}
+
+.dark .button-3d {
+	background-color: #6b7280; /* gray-500 for dark mode */
+	box-shadow: 0 2px 0 #374151;
+}
+
+.button-3d span {
+	display: block;
+	width: 100%;
+	padding: 0.4rem 0.75rem;
+	border-radius: 5px;
+	border: 2px solid #2d3748;
+	background: #f7fafc;
+	color: #1a202c;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	box-sizing: border-box;
+}
+
+.button-3d-large span {
+	width: 100%;
+	padding: 0.65rem 1.25rem;
+	border-radius: 8px;
+	box-sizing: border-box;
+}
+
+.dark .button-3d span {
+	background: #1f2937;
+	color: #f9fafb;
+	border-color: #374151;
+}
+
+.button-3d:hover {
+	transform: rotate(-2deg) translateY(-1px);
+	padding-bottom: 4px;
+}
+
+.button-3d:active {
+	transform: rotate(-2deg) translateY(3px);
+	padding-bottom: 0px;
+}
+
+.button-3d-secondary {
+	background-color: transparent;
+	box-shadow: none;
+	padding-bottom: 0;
+}
+
+.button-3d-secondary span {
+	border: 2px solid #2d3748;
+	background: transparent;
+	color: #2d3748;
+}
+
+.dark .button-3d-secondary span {
+	border-color: #9ca3af;
+	color: #f9fafb;
+}
+
+.button-3d-secondary:hover {
+	transform: rotate(2deg) scale(1.05);
+	padding-bottom: 0;
+}
+
+.button-3d-secondary:active {
+	transform: rotate(2deg) scale(0.98);
+}
+
+/* Hand-drawn Button Styles */
+.button-hand-drawn {
+	position: relative;
+	text-align: center;
+	transition: 0.3s ease-in-out;
+	cursor: pointer;
+	background-color: transparent;
+	display: inline-flex;
+	align-items: center;
+	user-select: none;
+	font-family: "Courier New", monospace;
+	font-size: 0.75rem;
+	font-weight: bold;
+	padding: 0.35em 0.75em;
+	border: 2px solid #333333;
+	border-radius: 0.75rem;
+	box-shadow: #33333366 2px 2px 0 1px;
+	color: #333333;
+}
+
+.dark .button-hand-drawn {
+	border-color: #e5e7eb;
+	box-shadow: #e5e7eb66 3px 3px 0 1px;
+	color: #e5e7eb;
+}
+
+.button-hand-drawn:hover {
+	transform: rotate(-1.5deg) translateY(-1px);
+	border-width: 2px;
+}
+
+.button-hand-drawn:active {
+	box-shadow: inset #333333f1 2px 2px 0 1px;
+	transform: rotate(-1.5deg);
+}
+
+.dark .button-hand-drawn:active {
+	box-shadow: inset #e5e7ebf1 2px 2px 0 1px;
+}
+
+@keyframes hand-drawn-wiggle {
+	0%, 100% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(-1deg);
+	}
+	75% {
+		transform: rotate(1deg);
+	}
+}
+
+.button-hand-drawn:hover {
+	animation: hand-drawn-wiggle 0.5s ease-in-out infinite;
+}

@@ -57,7 +57,7 @@ export default function Hero() {
   }, [typed, isDeleting, roleIndex]);
 
   return (
-    <section className={`min-h-screen relative overflow-hidden ${
+    <section className={`min-h-screen relative overflow-hidden grid-background ${
         theme === 'dark'
           ? 'bg-gradient-to-b from-[#03070e] to-[#070c17]'
           : 'bg-gradient-to-b from-white to-gray-50'
@@ -100,20 +100,24 @@ export default function Hero() {
                 <h1 className={`text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                   Kyle S. Cervantes
                 </h1>
-                <h2 className={`text-xl sm:text-3xl lg:text-4xl font-semibold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                  {/* role text kept smaller than the heading for better visual hierarchy */}
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-semibold">
+                  {/* role text with modern background highlight */}
                   <span
-                    className="inline-block text-base sm:text-lg lg:text-xl font-medium"
+                    className={`inline-block px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-base sm:text-lg lg:text-xl font-semibold transition-all duration-300 ${
+                      theme === 'dark'
+                        ? 'bg-gradient-to-r from-gray-700/80 via-gray-600/80 to-gray-700/80 text-white shadow-lg shadow-gray-900/50 border border-gray-600/30'
+                        : 'bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 text-gray-900 shadow-lg shadow-gray-400/30 border border-gray-300/50'
+                    } backdrop-blur-sm`}
                     role="status"
                     aria-live="polite"
                   >
                     {typed || '\u00A0'}
-                  </span>
-                  <span
-                    className={`inline-block ml-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'} text-base sm:text-lg lg:text-xl`}
-                    aria-hidden="true"
-                  >
-                    <span className="animate-blink">|</span>
+                    <span
+                      className="inline-block ml-1 animate-blink"
+                      aria-hidden="true"
+                    >
+                      |
+                    </span>
                   </span>
                 </h2>
               </div>
@@ -124,26 +128,18 @@ export default function Hero() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4 bg-">
+              <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-row sm:gap-4 pt-4">
                 <a
                   href="#projects"
-                  className={`inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r ${
-                    theme === 'dark'
-                      ? 'from-gray-600 to-gray-600 hover:from-gray-700 hover:to-gray-800'
-                      : 'bg-gray-900 hover:to-black'
-                  } rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95`}
+                  className="button-3d text-sm w-full sm:w-auto inline-flex"
                 >
-                  View My Work
+                  <span>View My Work</span>
                 </a>
                 <a
                   href="#contact"
-                  className={`inline-flex items-center justify-center px-6 py-3 text-base font-medium bg-transparent border-2 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 ${
-                    theme === 'dark'
-                      ? 'text-white border-white hover:bg-white hover:text-gray-900'
-                      : 'text-gray-900 border-gray-900 hover:bg-gray-900 hover:text-white'
-                  }`}
+                  className="button-3d button-3d-secondary text-sm w-full sm:w-auto inline-flex"
                 >
-                  Get In Touch
+                  <span>Get In Touch</span>
                 </a>
               </div>
             </div>
