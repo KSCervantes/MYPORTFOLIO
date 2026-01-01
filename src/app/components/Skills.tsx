@@ -1,7 +1,7 @@
 "use client";
 
 import { FaGlobe, FaMobile, FaShoppingCart, FaReact, FaChevronLeft, FaChevronRight, FaBrain, FaRobot } from 'react-icons/fa';
-import { SiReact, SiNextdotjs, SiTypescript, SiFlutter, SiGooglecolab, SiKotlin, SiShopify, SiStripe, SiPaypal, SiWebpack, SiPython, SiTensorflow, SiPytorch, SiFlask, SiOpencv, SiHuggingface, SiRoboflow } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTypescript, SiFlutter, SiGooglecolab, SiKotlin, SiShopify, SiStripe, SiPaypal, SiWebpack, SiPython, SiTensorflow, SiPytorch, SiFlask, SiHuggingface, SiRoboflow } from 'react-icons/si';
 import { useRef, useState, useEffect, useCallback } from 'react';
 
 const Skills = () => {
@@ -141,7 +141,6 @@ const Skills = () => {
     ...services.slice(0, Math.min(3, cardCount)) // Clone first 3 (or all if less than 3)
   ];
   const offset = Math.min(3, cardCount); // Offset to account for cloned items at start
-  const totalItems = duplicatedServices.length;
 
   // Autoplay settings
   const AUTOPLAY = true; // toggle autoplay on/off
